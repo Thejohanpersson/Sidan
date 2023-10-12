@@ -18,41 +18,42 @@
     font-family: "Barlow Semi Condense";
     src: url(Fonts/Barlow_Semi_Condensed-1/BarlowSemiCondensed-Bold.ttf);
 }
+/* --------------------------------------------BODY--------------------------------------------------- */
 body{
     margin: 0;
     background-image: url(Images/jimi-hendrix-omslag.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-attachemnt för att bilden ska stanna och scroll*/
+
     background-attachment: fixed; 
     
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+/*-------------------------------------------WRAPPER---------------------------------------------------- */
 #wrapper {
     background-color: rgba(48, 47, 47, 0.5);
     border-radius: 20px;
     margin: 5vh 10vw;
 
 }
+/*-------------------------------------------HEADER---------------------------------------------------- */
 header h1 {
     font-family: "Bungee shadow";
     color: rgba(243, 242, 242, 0.7);
     font-size: 10vh;
     margin: 2vh;
 }
-/* nav, använder justify content center för att centrera horisontellt för att centrera nav*/
-
+/*-------------------------------------------NAV---------------------------------------------------- */
 nav{
     display: flex;
     gap: 0.5vh;
     margin: 6vh 2vh;
     
 }
-/* flex basis för jag vill få alla till samma längd (nollställa dem) sedan flex grov 1 för jag vill dom ska ta lika mycket plats */
+
 nav a {
     text-decoration: none;
     color: black;
@@ -71,7 +72,7 @@ a:hover {
     color: white;
 
 }
-/* cursor till auto för att inte få en hover effekt lika så samma färg som a så inget sker*/
+
 a:nth-child(2) {
     border: 1px solid white;
     background-color:  rgba(243, 242, 242, 0.7);
@@ -81,6 +82,7 @@ a:nth-child(2) {
     font-family: "Barlow Bold";
 }
 
+/*------------------------------------------- SECTION 1 ---------------------------------------------------- */
 section {
     border: 1px solid white;
     background-color: rgba(29, 28, 28, 0.6);
@@ -88,12 +90,14 @@ section {
     margin: 1vh 2vh;
 }
 
+/*------------------------------------------- MAIN SECTION TOP-ROW ---------------------------------------------------- */
 .top-row{
     display: flex;
     padding: 2vh 2vh 0.5vh 2vh;
     gap: 1vh;
 }
 
+/*------------------------------------------- CONTENT ---------------------------------------------------- */
 .content{
     width: 60%;
     color: white;
@@ -127,15 +131,14 @@ section {
     font-family: "Barlow Condense";
     font-size: 2vh;
 }
-
+/*--------------------------------------------------ALBUM ----------------------------------------------------------------*/
 .album{
     width: 40%;
     display: flex;
     flex-direction: column;
     gap: 1vh;
 }
-
-/* vill att bilden ska ta 100% av hela 40%*/
+/*------------------------------------------------ALBUM IMAGE-------------------------------------------------------------- */
 .img-container{
     position: relative;
     height: 100%;
@@ -156,9 +159,11 @@ section {
     opacity: 1;
     transition: opacity 1s;
 }
+
 .img-container img:first-child:hover{
     opacity: 0;
 }
+/*-------------------------------------------LIST - BOX ---------------------------------------------------- */
 .list-box{
     display: flex;
     gap: 1vh;
@@ -192,8 +197,8 @@ section {
     border-radius: 0 0 10px 0;
 }
 
-/* ---------- HÄR BÖRJAR BOTTOM ROW = GRID ------------*/ 
-/* skriver vw på bottom row för vill att texten ska stanna så, vh så minskas raden.*/ 
+/* ------------------------------------------ HÄR BÖRJAR BOTTOM ROW = GRID -------------------------------------------*/ 
+
 .bottom-row{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -203,7 +208,7 @@ section {
 }
 .bottom-row p{
     margin: 0;
-    padding: 1vw;
+    padding: 1vw 2vw;
     font-size: 1.5vw;
     font-family: "Barlow Condense";
 
@@ -211,6 +216,8 @@ section {
     display: flex;
     align-items: center;
 }
+/* ------------------------------------------ BOTTOM ROW 1 = GRID -------------------------------------------*/ 
+
 .bottom-row p:first-child{
     background-color: rgb(209, 100, 169);
     color: #eecb00;
@@ -247,13 +254,11 @@ section {
 }
 
 
-/* ------- ANDRA bottom rows START ------- */
+/* --------------------------------------------------ANDRA bottom rows START ----------------------------------------------- */
 main > :nth-child(2) .list-box ol{
     background-color: #007ca2;
     color:beige;
 }
-
-
 
 main > :nth-child(2) .bottom-row p:first-child{
     color: #007ca2;
@@ -278,6 +283,7 @@ main > :nth-child(2) .bottom-row img{
     grid-row: 1;
     border-radius: 0 10px 10px 10px;
 }
+
 main > :nth-child(2) .bottom-row p:nth-child(4){
     grid-column: 4 / span 2;
     grid-row: 1;
@@ -290,6 +296,8 @@ main > :nth-child(2) .bottom-row p:nth-child(5){
     background-color: beige;
     border-radius: 10px 10px 0 10px;
 }
+/* ------------------------------------------ FOOTER ----------------------------------------------------*/ 
+
 footer{
     padding: 2vh; 
 }
@@ -302,9 +310,9 @@ footer p{
 
 
 
-/* ---------------------- MEDIA QUERIES START-------------------------- */ 
+/* ----------------------------------------MEDIA QUERIES START--------------------------------------------- */ 
 
-/* -----------------------500px MOBIL VERSION--------------------------*/
+/* ---------------------------------------- MOBIL VERSION UNDER 500px ---------------------------------------------*/
 
 @media (max-width: 500px){
     body{
@@ -332,6 +340,18 @@ footer p{
         width: 100%;
     }
 
+    .content h2{
+        font-size: 7vw;
+    }
+
+    .content h3{
+        font-size: 5vw;
+    }
+
+    .content ul, .content p{
+        font-size: 4vw;
+    }
+
     .album img{
         border-radius: 10px 0 0 10px;
     }
@@ -349,22 +369,15 @@ footer p{
         font-size: 4vw;
     }
 
-    .content h2{
-        font-size: 7vw;
-    }
-
-    .content h3{
-        font-size: 5vw;
-    }
-
-    .content ul, .content p{
-        font-size: 4vw;
-    }
-
     .bottom-row{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
+    }
+
+    .bottom-row p{
+        padding: 2vw;
+        font-size: 3vw;
     }
 
     .bottom-row p:first-child{
@@ -388,11 +401,6 @@ footer p{
     .bottom-row p:nth-child(5){
         grid-column: 3;
         grid-row: 2;
-    }
-
-    .bottom-row p{
-        padding: 2vw;
-        font-size: 3vw;
     }
 
     main > :nth-child(2) .bottom-row p:first-child{
@@ -425,9 +433,9 @@ footer p{
     }
 }
 
-/* ----------------------MEDIA QUERIES START----------------------------- */
+/* --------------------------------------- MEDIA QUERIES START ---------------------------------------------- */
 
-/* --------------------- DESKTOP 800 - 900 px --------------------------- */ 
+/* --------------------------------------- DESKTOP 800 - 900 px --------------------------------------------- */ 
 @media (min-width:800px) and (max-width:900px){
         header h1{
         font-size: 63px;
@@ -451,12 +459,10 @@ footer p{
     footer p{
         font-size: 12px;
     }
-
-
 }
 
 
-/* -------------------------- 900-1200px ------------------------ */ 
+/* ------------------------------------------- DESKTOP 900-1200px --------------------------------------------- */ 
 @media (min-width:900px) and (max-width:1200px){
     header h1{
         font-size: 7vw;
@@ -484,8 +490,13 @@ footer p{
 
 }
 
-/* -------------------- 1200px och efter --------------------------*/ 
+/* --------------------------------------------- DESKTOP 1200px och efter ------------------------------------------*/ 
 @media (min-width:1200px){
+    
+    #wrapper{
+        width: 960px;
+    }
+
     header h1{
         font-size: 84px;
     }
@@ -516,9 +527,4 @@ footer p{
     .list-box li{
         font-size: 12px;
     }
-
-    #wrapper{
-        width: 960px;
-    }
-
 }
